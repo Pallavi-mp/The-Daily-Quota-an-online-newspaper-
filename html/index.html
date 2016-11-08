@@ -1,0 +1,114 @@
+<html>
+<style>
+body {
+    background-image: url('login_bg1jpg.jpg');
+	background-image:no-repeat;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    padding-top: 20px;
+}
+ 
+.log {
+		width:406px;
+		max-width:406px;
+		margin: 0 auto;
+		background-color:rgba(0,0,0,0.55);
+		color:white;
+		padding:25px;
+		position:absolute;
+		top:20%;
+		left:35%;}
+.head {
+		border-bottom:1px solid white;
+		}
+.inputs {
+
+		padding-top:20px;}
+ 
+input[type=submit] {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+	font-size:20px;
+}
+
+input[type=submit]:hover {
+    background-color:rgba(0,0,0,0.75);
+	color:white;
+}
+input[type=text], [type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+p {
+	color:white;
+	font-size:20px;
+	text-align:center;
+	font-family:Helvetica Neue;
+	}
+	
+a {
+	text-decoration:none;}
+p:hover {
+		color:red;}
+	
+
+
+   
+
+ 
+</style>
+<body>
+<div class="log" id="l">
+	<form id="login" action="login.php" method="post">
+	
+		<div class="head">
+			<br>
+			<h2 align="center">login</h2>
+		</div>
+		
+		<div class="se"></div>
+		
+		<div class="inputs">
+			<label for="uname">Username</label>
+			<input type="text" placeholder="Username" name="username" id="uname" autofocus/>
+			
+			<label for="p">Password</label>
+			<input type="password" placeholder="Password" name="password" id="p" autofocus/>
+			
+			<input type="submit" name="submit"  id="sub" value="Go">
+		
+		</div>
+	</form>
+	<a href="sign.html"><p id="new">New User? Sign-up here</p></a>
+</div>
+	
+	
+
+ 
+</div>
+</body>
+</html>
+<?php
+	define('DB_HOST', 'localhost');
+	define('DB_NAME', 'userdetails');	
+	define('DB_USER','root');
+	define('DB_PASSWORD','');
+	
+	$con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); 
+	$db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error()); 
+	if (mysqli_connect_errno($con)) { echo "Failed to connect to MySQL: " . mysqli_connect_error(); } 
+	else { echo “Successfully connected to your database…”; } 
+
+?> 
+
